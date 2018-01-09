@@ -1,0 +1,14 @@
+Create an instance of the AppSQLite class and do the changes as per requirement with the table 
+here I have done for the one table you can do as many with tables.
+    
+    AppSQLite appSQLite = new AppSQLite(/*SQLiteDatabase reference*/, "User"/*Your table name in which you want to upgrade changes*/);
+    appSQLite.addColumn("firstname", "INTEGER");....
+    appSQLite.renameColumn("firstname", "name");....
+    appSQLite.removeColumns("name");....
+    appSQLite.renameTableName("Employee");//User ==> Employee
+    appSQLite.execute();//This is necessary for every table changes execution
+
+    ArrayList<ColumnInfo> allColumns = appSQLite.getAllColumns("Employee");
+    
+    AppSQLite appSQLite1 = new AppSQLite(/*SQLiteDatabase reference*/, "Friends"/*Your table name in which you want to upgrade changes*/);
+    ......
